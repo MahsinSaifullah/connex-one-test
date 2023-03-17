@@ -4,7 +4,7 @@ interface TimeData {
   epoch: number;
 }
 
-//@route    GET api/time
+//@route    GET /time
 //@desc     Get current server time, in epoch seconds
 //@access   Private
 export const getServerTime = async (
