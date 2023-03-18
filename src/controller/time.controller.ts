@@ -16,5 +16,6 @@ export const getServerTime = async (
     epoch: currentServerTime,
   };
 
-  res.status(200).json(responseObject);
+  res.status(200);
+  res.json(responseObject);
 };
