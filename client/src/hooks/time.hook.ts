@@ -29,7 +29,7 @@ export const useTime = () => {
       const time = await getServerTime();
       setServerTime(time);
     } catch (error) {
-      setIsError(false);
+      setIsError(true);
     }
 
     setIsLoading(false);
