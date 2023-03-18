@@ -4,9 +4,11 @@
   "description": "full stack app for connex one test",
   "main": "server.ts",
   "scripts": {
-    "start": "nodemon",
-    "lint": "eslint src/**",
-    "test:server": "jest"
+    "start:server": "nodemon",
+    "lint:server": "eslint src/**",
+    "test:server": "jest",
+    "start:client": "cd client && npm start",
+    "lint:client": "cd client && npm run lint"
   },
   "author": "",
   "license": "ISC",
