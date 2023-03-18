@@ -1,12 +1,14 @@
 import { ITimeDifference } from '../models';
 
-export const convertEpochToHourMinSec = (epoch: number): ITimeDifference => {
-  const date = new Date(epoch * 1000);
+export const calculateTimeDifference = (serverTime: number) => {
+  return Math.round(Date.now() / 1000) - serverTime;
+};
 
+export const convertSecondToHourMinSec = (sec: number): ITimeDifference => {
   return {
-    hours: date.getHours(),
-    minutes: date.getMinutes(),
-    seconds: date.getSeconds(),
+    hours: Math.floor(sec / 3600),
+    minutes: Math.floor(sec / 60) % 60,
+    seconds: sec % 60,
   };
 };
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { IServerTime, ITimeDifference } from '../models';
 import { getServerTime } from '../services';
+import { calculateTimeDifference, convertSecondToHourMinSec } from '../utils';
 
 export const useTime = () => {
   const [serverTime, setServerTime] = React.useState<IServerTime>({
@@ -15,6 +16,12 @@ export const useTime = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
   const timeFetchRef = React.useRef<NodeJS.Timer>();
+  const timeDiffRef = React.useRef<NodeJS.Timer>();
+
+  const getTimeDiff = () => {
+    const timeDiffFromServer = calculateTimeDifference(serverTime.epoch);
+    setTimeDiff(convertSecondToHourMinSec(timeDiffFromServer));
+  };
 
   const getTime = async () => {
     try {
@@ -44,8 +51,23 @@ export const useTime = () => {
     };
   }, []);
 
+  React.useEffect(() => {
+    if (timeDiffRef.current) {
+      clearInterval(timeDiffRef.current);
+    }
+
+    timeDiffRef.current = setInterval(async () => {
+      getTimeDiff();
+    }, 1000);
+
+    return () => {
+      clearInterval(timeDiffRef.current);
+    };
+  }, [serverTime.epoch]);
+
   return {
     serverTime,
+    timeDiff,
     isLoading,
     isError,
   };
