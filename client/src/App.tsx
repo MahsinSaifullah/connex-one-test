@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <div
       className="bg-gradient-to-r from-cyan-100 to-blue-100 
     h-screen w-screen overflow-scroll flex 
-    justify-center items-center space-x-4  flex-wrap"
+    justify-center items-center space-x-4  flex-wrap py-4"
     >
       <Time />
       <Metric />

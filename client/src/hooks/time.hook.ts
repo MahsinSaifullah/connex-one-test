@@ -31,11 +31,6 @@ export const useTime = () => {
     try {
       setIsLoading(true);
       const time = await getServerTime();
-      setTimeDiff({
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      });
       setServerTime(time);
     } catch (error) {
       setIsError(true);
