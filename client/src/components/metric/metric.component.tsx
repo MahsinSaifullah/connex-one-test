@@ -12,7 +12,10 @@ export const Metric: React.FC = () => {
         {isLoading ? (
           <Loading loadingText="Loading" />
         ) : (
-          <pre className="text-xs sm:text-sm tracking-widest font-mono font-bold">
+          <pre
+            data-testid="metrics"
+            className="text-xs sm:text-sm tracking-widest font-mono font-bold"
+          >
             {metrics}
           </pre>
         )}

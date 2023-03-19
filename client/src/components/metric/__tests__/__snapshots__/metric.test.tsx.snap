@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Metric Component should render Metric component if isLoading is false 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col justify-center items-center space-y-4"
+  >
+    <h2
+      class="text-lg sm:text-2xl font-bold tracking-widest undefined"
+    >
+      Prometheus Metrics
+    </h2>
+    <article
+      class="rounded shadow-lg bg-white overflow-scroll sm:min-w-[600px] max-w-sm lg:max-w-xl h-[400px] xl:h-[500px] px-4 py-2"
+    >
+      <pre
+        class="text-xs sm:text-sm tracking-widest font-mono font-bold"
+        data-testid="metrics"
+      >
+        test
+      </pre>
+    </article>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Metric Component should render loading component if isLoading is true 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col justify-center items-center space-y-4"
+  >
+    <h2
+      class="text-lg sm:text-2xl font-bold tracking-widest undefined"
+    >
+      Prometheus Metrics
+    </h2>
+    <article
+      class="rounded shadow-lg bg-white overflow-scroll sm:min-w-[600px] max-w-sm lg:max-w-xl h-[400px] xl:h-[500px] px-4 py-2"
+    >
+      <div
+        class="text-2xl animate-pulse undefined"
+      >
+        Loading ...
+      </div>
+    </article>
+  </div>
+</DocumentFragment>
+`;
