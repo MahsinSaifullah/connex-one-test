@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title Component should render title component correctly 1`] = `
+<DocumentFragment>
+  <h2
+    class="text-lg sm:text-2xl font-bold tracking-widest undefined"
+  >
+    test title
+  </h2>
+</DocumentFragment>
+`;

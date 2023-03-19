@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title Component should render title component correctly 1`] = `
+<DocumentFragment>
+  <article
+    class="rounded shadow-lg bg-white overflow-scroll undefined"
+  >
+    <div>
+      Test
+    </div>
+  </article>
+</DocumentFragment>
+`;
