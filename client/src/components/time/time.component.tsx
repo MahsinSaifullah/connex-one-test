@@ -18,13 +18,13 @@ export const Time: React.FC = () => {
               <span className="text-sm sm:text-2xl bg-black text-white mr-2 p-2 rounded">
                 Server Timestamp:
               </span>{' '}
-              {serverTime.epoch}
+              <span data-testid="server-time">{serverTime.epoch}</span>
             </div>
             <div className="text:sm sm:text-lg tracking-wider">
               <span className="text-sm sm:text-2xl bg-rose-700 text-white mr-2 p-2 rounded">
                 Time Difference:
               </span>{' '}
-              {timeDifferenceDisplay}
+              <span data-testid="time-difference">{timeDifferenceDisplay}</span>
             </div>
           </>
         )}
