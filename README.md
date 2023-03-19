@@ -15,8 +15,8 @@
 
 ## Installation:
 
-- After cloning the repo run `npm i` in ther root to install dependencies for the backend.
-- Then run `cd client` and again run `npm i` to install dependencies for the frontend.
+- After cloning the repo run `npm i` in the root to install dependencies for the backend.
+- Then `cd client` and again run `npm i` to install dependencies for the frontend.
 - Create a `.env` file in the root of the project and copy the following there:
 
 ```
