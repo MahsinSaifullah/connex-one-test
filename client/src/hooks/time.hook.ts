@@ -22,10 +22,10 @@ export const useTime = () => {
   const timeFetchRef = React.useRef<NodeJS.Timer>();
   const timeDiffRef = React.useRef<NodeJS.Timer>();
 
-  const getTimeDiff = () => {
+  const getTimeDiff = React.useCallback(() => {
     const timeDiffFromServer = calculateTimeDifference(serverTime.epoch);
     setTimeDiff(convertSecondToHourMinSec(timeDiffFromServer));
-  };
+  }, [serverTime.epoch]);
 
   const getTime = async () => {
     try {
@@ -67,7 +67,7 @@ export const useTime = () => {
     return () => {
       clearInterval(timeDiffRef.current);
     };
-  }, [serverTime.epoch]);
+  }, [serverTime.epoch, getTimeDiff]);
 
   return {
     serverTime,
