@@ -47,11 +47,7 @@ describe('Time Component', () => {
     });
 
     render(<Time />);
-
-    const serverTimeElement = screen.getByTestId('server-time');
-    const timeDifferenceElement = screen.getByTestId('time-difference');
-
-    expect(serverTimeElement.innerHTML).toBe('100');
-    expect(timeDifferenceElement.innerHTML).toBe('10:10:10');
+    expect(screen.getByTestId('server-time').innerHTML).toBe('100');
+    expect(screen.getByTestId('time-difference').innerHTML).toBe('10:10:10');
   });
 });

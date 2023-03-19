@@ -44,7 +44,6 @@ describe('Metric Component', () => {
     });
 
     render(<Metric />);
-    const metricElement = screen.getByTestId('metrics');
-    expect(metricElement.innerHTML).toBe('test');
+    expect(screen.getByTestId('metrics').innerHTML).toBe('test');
   });
 });
