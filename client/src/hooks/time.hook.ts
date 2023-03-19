@@ -2,7 +2,11 @@ import * as React from 'react';
 
 import { IServerTime, ITimeDifference } from '../models';
 import { getServerTime } from '../services';
-import { calculateTimeDifference, convertSecondToHourMinSec } from '../utils';
+import {
+  calculateTimeDifference,
+  convertSecondToHourMinSec,
+  formatTimeDisplay,
+} from '../utils';
 
 export const useTime = () => {
   const [serverTime, setServerTime] = React.useState<IServerTime>({
@@ -27,6 +31,11 @@ export const useTime = () => {
     try {
       setIsLoading(true);
       const time = await getServerTime();
+      setTimeDiff({
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      });
       setServerTime(time);
     } catch (error) {
       setIsError(true);
@@ -67,7 +76,7 @@ export const useTime = () => {
 
   return {
     serverTime,
-    timeDiff,
+    timeDifferenceDisplay: formatTimeDisplay(timeDiff),
     isLoading,
     isError,
   };
