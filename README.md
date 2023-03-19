@@ -1,7 +1,5 @@
 # Connex One Full Stack Test
 
----
-
 ## Tech Stack:
 
 ### Backend
