@@ -13,7 +13,7 @@ describe('calculateTimeDifference', () => {
 
 describe('convertSecondToHourMinSec', () => {
   it('should return the correct value', () => {
-    expect(convertSecondToHourMinSec(1000)).toMatchObject({
+    expect(convertSecondToHourMinSec(1000)).toStrictEqual({
       hours: 0,
       minutes: 16,
       seconds: 40,
