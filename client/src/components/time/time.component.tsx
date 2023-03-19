@@ -9,7 +9,7 @@ export const Time: React.FC = () => {
   return (
     <div className="flex flex-col justify-center items-center space-y-4">
       <Title title="Server Timestamp" />
-      <Card className="sm:min-w-[600px] h-[400px] sm:h-[500px] max-w-sm sm:max-w-2xl flex flex-col space-y-10 p-10 justify-center items-center">
+      <Card className="sm:min-w-[600px] h-[400px] xl:h-[500px] max-w-sm lg:max-w-2xl flex flex-col space-y-10 p-10 justify-center items-center">
         {isLoading ? (
           <Loading loadingText="Updating" />
         ) : (
